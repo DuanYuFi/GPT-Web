@@ -199,20 +199,19 @@ function useSubmitHandler() {
   const submitKey = config.submitKey;
 
   const shouldSubmit = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    return e.key === "Enter";
-    // if (e.key !== "Enter") return false;
-    // if (e.key === "Enter" && e.nativeEvent.isComposing) return false;
-    // return (
-    // (config.submitKey === SubmitKey.AltEnter && e.altKey) ||
-    // (config.submitKey === SubmitKey.CtrlEnter && e.ctrlKey) ||
-    // (config.submitKey === SubmitKey.ShiftEnter && e.shiftKey) ||
-    // (config.submitKey === SubmitKey.MetaEnter && e.metaKey) ||
-    // (config.submitKey === SubmitKey.Enter &&
-    //   !e.altKey &&
-    //   !e.ctrlKey &&
-    //   !e.shiftKey &&
-    //   !e.metaKey)
-    // );
+    if (e.key !== "Enter") return false;
+    if (e.key === "Enter" && e.nativeEvent.isComposing) return false;
+    return (
+      (config.submitKey === SubmitKey.AltEnter && e.altKey) ||
+      (config.submitKey === SubmitKey.CtrlEnter && e.ctrlKey) ||
+      (config.submitKey === SubmitKey.ShiftEnter && e.shiftKey) ||
+      (config.submitKey === SubmitKey.MetaEnter && e.metaKey) ||
+      (config.submitKey === SubmitKey.Enter &&
+        !e.altKey &&
+        !e.ctrlKey &&
+        !e.shiftKey &&
+        !e.metaKey)
+    );
   };
 
   return {
