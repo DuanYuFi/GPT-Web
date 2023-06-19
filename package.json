@@ -24,7 +24,7 @@
     "@particle-network/provider": "^0.13.0",
     "@particle-network/solana-wallet": "^0.13.0",
     "@solana/web3.js": "^1.76.0",
-    "@svgr/webpack": "^6.5.1",
+    "@svgr/webpack": "^8.0.1",
     "html-to-image": "^1.11.11",
     "mermaid": "^10.2.3",
     "next": "^13.4.3",
